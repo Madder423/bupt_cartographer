@@ -1,1 +1,5 @@
 # bupt_cartographer
+
+bupt_cartographer文件为cartographer的ros2功能包，主要内容为lua的配置文件与启动cartographer的launch.py文件。
+robot_description为机器人模型描述功能包，主要内容为描述机器人模型的urdf以及使用rviz显示机器人的launch.py文件。其中，urdf已被提供给cartographer用于tf2转换
+fullfield_positioning为从CANable接收全场定位数据并发布odom消息的功能包。
