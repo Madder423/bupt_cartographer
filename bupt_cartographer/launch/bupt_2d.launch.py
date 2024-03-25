@@ -17,8 +17,8 @@ def generate_launch_description():
     # 找到cartographer功能包的地址
     pkg_share = FindPackageShare('cartographer_ros').find('cartographer_ros')
     # 加载机器人模型路径
-    urdf_name = "bupt_medical.urdf"
-    urdf_model_path = os.path.join(FindPackageShare('robot_description').find('robot_description'), f'urdf/{urdf_name}')
+    # urdf_name = "bupt_medical.urdf"
+    # urdf_model_path = os.path.join(FindPackageShare('robot_description').find('robot_description'), f'urdf/{urdf_name}')
     #TODO:加载rviz初始配置路径
     ## ***** Nodes *****
     #=====================声明三个节点，cartographer/occupancy_grid_node/rviz_node=================================
@@ -34,16 +34,16 @@ def generate_launch_description():
         output = 'screen'
         )
     # 加载tf
-    robot_state_publisher_node = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        arguments=[urdf_model_path]
-        )
-    joint_state_publisher_node = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        arguments=[urdf_model_path]
-        )
+    # robot_state_publisher_node = Node(
+    #     package='robot_state_publisher',
+    #     executable='robot_state_publisher',
+    #     arguments=[urdf_model_path]
+    #     )
+    # joint_state_publisher_node = Node(
+    #     package='joint_state_publisher',
+    #     executable='joint_state_publisher',
+    #     arguments=[urdf_model_path]
+    #     )
 
 	# 可视化节点
     rviz_node = Node(
@@ -68,7 +68,7 @@ def generate_launch_description():
         rviz_node ,
         cartographer_node,
         cartographer_occupancy_grid_node,
-        robot_state_publisher_node,
-        joint_state_publisher_node,
+        # robot_state_publisher_node,
+        # joint_state_publisher_node,
     ])
 
